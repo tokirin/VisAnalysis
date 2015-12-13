@@ -1,0 +1,23 @@
+#statistic_info
+  .row
+    h1 class="page-header" 기본 통계 정보 - Statistic Information
+    .panel.panel-default
+      table#basic_meta.table.table-hover.table-striped.table-bordered.display
+        thead
+          tr
+            th #
+            - @headers.each do |h|
+              th #{h}
+        tbody
+          tr
+            th 평균
+            - @cols.each do |c|
+              th #{c.average.round 3}
+          tr
+            th 분산
+            - @cols.each do |c|
+              th #{c.variance.round 3}
+          tr
+            th 표준 편차
+            - @cols.each do |c|
+              th #{c.std_dv.round 3}

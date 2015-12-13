@@ -1,0 +1,55 @@
+.container
+  .jumbotron style='background-color: RGBA(255, 255, 255, 0.8)'
+    /div style="text-align:center"
+    /  img src='assets/imcloud_logo_grey.png' style='width: 500px'
+    br
+    br
+    div role='tabpanel'
+      ul.nav-justified.nav.nav-tabs role='tablist'
+        li.active role="presentation"
+          a href="#new" aria-controls="new" role="tab" data-toggle="tab" New Data Set
+        li role="presentation"
+          a href="#previous" aria-controls="previous" role="tab" data-toggle="tab" Previous Data Set
+      .tab-content style='margin-top:30px'
+        .tab-pane.active#new role='tabpanel'
+          .row
+            .col-md-12
+              .input-group.input-group-lg
+                span.input-group-addon Data Name
+                input.form-control#data-set-name type='text' placeholder='Please Insert Name of Data Set'
+              br
+              input.file#data-file-input type='file' data-show-upload='false'
+              br
+              .row#parse_loading style='text-align:center'
+                | <b><img src='assets/loading.gif'/>     Data Parsing..</b>
+              .row
+              button.btn.btn-info.btn-xl#btn_submit_data disabled=true style="width:100%; height:100%"
+                | Submit Data
+        .tab-pane#previous role='tabpanel'
+          table.table.table-hover
+            thead
+              tr
+                th
+                  | Date
+                th
+                  | Data Set Name
+                th
+                  | Column Numbers
+                th
+                  | #
+                th
+                  | #
+            tbody
+              - DataSet.all.each do |data|
+                tr id="#{data.id}"
+                  th
+                    = data.created_at
+                  th
+                    = data.data_name
+                  th
+                    = data.col_num
+                  th
+                    = link_to "/#{data.id}"
+                      button.btn.btn-success 분석 결과 보기
+                  th
+                      button.btn.btn-danger#btn_data_remove 데이터 삭제

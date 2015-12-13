@@ -1,0 +1,104 @@
+.btn-xl {
+    padding: 28px 38px;
+    font-size: 33px;
+    border-radius: 8px;
+}
+.anchor {
+    padding-top: 73px;
+    margin-top: -73px;
+}
+
+body { padding-top: 50px; }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #000;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: black; /*BACKGROUND color for active*/
+    background-color: white
+}
+
+.navbar-default {
+    background-color: #0f006f;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #66CCFF;  /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+}
+
+
+.navbar-default .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+
+
+/* footer */
+.footer {
+    background: #272626;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 0;
+}
+.footer-light {
+    background: #F9F9F9;
+    color: #3e4d5c;
+}
+.footer-gray {
+    background: #4A5866;
+}
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer a:hover {
+    text-decoration: none;
+}
+.footer-light a {
+    color: inherit;
+}
+.footer .padding-top-10 {
+    opacity: 0.5;
+}
+.footer .list-inline > li:last-child {
+    padding-right: 0;
+}
+.footer ul {
+    margin: 0;
+    padding: 0;
+}
+.footer ul.social-footer {
+    font-size: 18px;
+    padding-top: 5px;
+}
+.footer .social-icons li {
+    float: right;
+    margin: 0 0 0 5px
+}
+.copyright {
+    padding-top: 7px;
+}
+@-moz-document url-prefix() {
+    .copyright {
+        padding-top: 6px;
+    }
+}
+.footer ul.social-icons li a {
+    opacity: 0.5;
+}
+.footer ul.social-icons li:hover a {
+    opacity: 1 !important;
+}
+
+.panel{
+    overflow-x:scroll;
+}

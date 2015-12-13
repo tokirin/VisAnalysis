@@ -1,0 +1,48 @@
+#simple_regression
+  .row
+    h1 class="page-header" 단순 회귀 분석 - Simple Regression Analysis
+
+    .row#regression_console style="padding-top:10px"
+      form.form-horizontal
+        .col-md-6
+          .form-group
+            label.control-label.col-md-4 독립 변수 (X-AXIS) 선택
+            select.selectpicker.col-md-8#regression_x_axis
+              -@cols.each do |c|
+                option value="#{c.id}" #{c.name}
+          .form-group
+            label.control-label.col-md-4 종속 변수 (Y-AXIS) 선택
+            select.selectpicker.col-md-8#regression_y_axis
+              -@cols.each do |c|
+                option value="#{c.id}" #{c.name}
+        .col-md-6
+          .btn.btn-success.col-md-8#btn_regression_submit style='margin-top:20px; margin-left:90px' 분석
+
+    .row
+      .col-md-6
+        #regression_chart
+      .col-md-6
+        #regression_info
+          .panel.panel-default
+            .panel-heading 회귀 분석 통계량
+            table.table.table-hover.table-striped.table-bordered.display
+              tbody
+                tr
+                  th 상관 계수
+                  td#regression_cc
+                tr
+                  th 결정 계수
+                  td#regression_dc
+                tr
+                  th 표준 오차
+                  td#regression_std_error
+                tr
+                  th 관측 수
+                  td#regression_sample_num
+                tr
+                  th 회귀 식 기울기
+                  td#regression_slope
+                tr
+                  th 회귀 식 y 절편
+                  td#regression_y_intercept
+

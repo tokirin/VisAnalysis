@@ -1,0 +1,22 @@
+nav.navbar-fixed-top.navbar.navbar-default role='navigation' style="background-color:RGBA(91, 192, 222, 0.8)"
+  .container-fluid
+    .navbar-header
+      a class="navbar-brand" href="/"
+        | Tokirin's Visualization Tool
+        /img.img-responsive src='/assets/imcloud_logo_all_white.png' style="width:70px"
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav#navbar
+        li
+          a href="#" #{@data_name}
+        li.active
+          a href="#basic_chart" 기본 시각화 그래프
+        li
+          a href="#data_table" 데이터 테이블
+        li
+          a href="#statistic_info" 기본 통계 정보
+        li
+          a href="#correlation_analysis" 상관 분석
+        li
+          a href="#simple_regression" 회귀 분석
+        li
+          a href="#simple_regression" T-검정(쌍체 비교)

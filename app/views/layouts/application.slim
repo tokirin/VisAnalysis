@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Tokirin's Visual Analytics Tool
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body(style='background-image:url(assets/cloud_bg.jpg); padding-top:100px')
+    = yield
+    = javascript_include_tag 'application'

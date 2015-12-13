@@ -1,0 +1,18 @@
+
+#correlation_analysis
+  .row
+    h1 class="page-header" 상관 분석표 - Correlation Analysis
+    .panel.panel-default
+      table.table.table-hover.table-striped.table-bordered.display
+        thead
+          tr
+            th y\x
+            - @headers.each do |h|
+              th #{h}
+        tbody
+          -i=0
+          -@correlation_result.each do |k,v|
+            tr
+              th #{k}
+              - v.each do |k,v|
+                td class="#{if v >= 0.5; 'success'; elsif v <= -0.5; 'danger';}" #{v.round 6}

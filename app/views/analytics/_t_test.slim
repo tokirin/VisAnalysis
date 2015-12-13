@@ -1,0 +1,67 @@
+#t_test
+  .row
+    h1 class="page-header" T-검정(쌍체 비교) - Paired Student's T-Test
+
+    .row#t_test_console style="padding-top:10px"
+      form.form-horizontal
+        .col-md-6
+          .form-group
+            label.control-label.col-md-4 변수 열(Column) 선택 1
+            select.selectpicker.col-md-8#t_test_c1
+              -@cols.each do |c|
+                option value="#{c.id}" #{c.name}
+          .form-group
+            label.control-label.col-md-4 변수 열(Column) 선택 2
+            select.selectpicker.col-md-8#t_test_c2
+              - i=0
+              -@cols.each do |c|
+                - if i==1
+                  option selected='true' value="#{c.id}" #{c.name}
+                - else
+                  option value="#{c.id}" #{c.name}
+                - i = i+1
+        .col-md-6
+          .btn.btn-success.col-md-8#btn_t_test_submit style='margin-top:20px; margin-left:90px' 분석
+
+    .row
+      .col-md-6
+        #t_test_basic_info_table
+          .panel.panel-default
+            .panel-heading 기본 수치
+            table.table.table-hover.table-striped.table-bordered
+              thead
+                tr
+                  th #
+                  th#t_test_col1_name
+                  th#t_test_col2_name
+              tbody
+                tr
+                  th 평균
+                  th#t_test_col1_avg
+                  th#t_test_col2_avg
+                tr
+                  th 분산
+                  th#t_test_col1_var
+                  th#t_test_col2_var
+                tr
+                  th 관측수
+                  th#t_test_col1_sample_num
+                  th#t_test_col2_sample_num
+      .col-md-6
+        #t_test_statistic_info
+          .panel.panel-default
+            .panel-heading T-Test 통계량
+            table.table.table-hover.table-striped.table-bordered
+              tbody
+                tr
+                  th 피어슨 상관 계수
+                  th#t_test_cc
+                tr
+                  th 가설 평균차
+                  th#t_test_hypothesis_avg_diff
+                tr
+                  th 자유도
+                  th#t_test_freedom
+                tr
+                  th T-Value
+                  th#t_test_t_value
