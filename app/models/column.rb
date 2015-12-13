@@ -22,7 +22,11 @@ class Column
   end
 
   def set_average
-    self.average = self.values.reduce(:+) / self.values.size.to_f
+    begin
+      self.average = self.values.reduce(:+) / self.values.size.to_f
+    rescue
+      puts self.values
+    end
   end
 
   def set_variance

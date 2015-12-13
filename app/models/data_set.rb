@@ -3,7 +3,6 @@ class DataSet
   include Mongoid::Timestamps
 
   has_many :columns, dependent: :destroy
-
   field :data_name, type: String
   field :col_num, type: Integer
 

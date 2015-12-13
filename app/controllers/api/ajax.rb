@@ -46,6 +46,22 @@ module API
 
         DataSet.paired_t_test(c1,c2)
       end
+
+      desc "평행 좌표 데이터 불러오기"
+      get ':id/paracoords' do
+        rows = DataSet.find(params[:id]).rows
+        header = DataSet.find(params[:id]).headers
+        rows = rows.map do |row|
+          _row = {}
+          i = 0
+          row.each do |item|
+            _row[header[i]] = row[i]
+            i = i+1
+          end
+          _row
+        end
+        rows
+      end
     end
   end
 end

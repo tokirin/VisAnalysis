@@ -7,6 +7,8 @@
 
 //= require plugin/d3.min.js
 //= require plugin/c3.min.js
+//= require plugin/d3.multibrush.js
+//= require plugin/d3.paracoord.js
 //= require plugin/papaparse.min.js
 //= require plugin/fileinput.min
 //= require toastr
